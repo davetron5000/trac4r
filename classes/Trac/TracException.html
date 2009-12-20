@@ -41,7 +41,92 @@
       </div>
       <div id='content'>
         <div id='text'>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public class</h3>
+            <ol>
+              <li><a href="#M000020">new</a></li>
+            </ol>
+            <h3>public instance</h3>
+            <ol>
+              <li><a href="#M000021">message</a></li>
+              <li><a href="#M000022">url</a></li>
+            </ol>
+          </div>
           <div id='section'>
+            <div id='methods'>
+              <h2>Public class methods</h2>
+              <div class='public-class method' id='method-M000020'>
+                <a name='M000020'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>new</span>
+                  <span class='arguments'>(http_error,host,port,path,method,args)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Creates new <a href="TracException.html">TracException</a>
+                  </p>
+                  <dl>
+                  <dt><tt>http_error</tt></dt><dd>the error message, possibly mulit-line
+                  
+                  </dd>
+                  <dt><tt>host</tt></dt><dd>host on which we are connecting to <a href="../Trac.html">Trac</a>
+                  
+                  </dd>
+                  <dt><tt>port</tt></dt><dd>port we&#8217;re using
+                  
+                  </dd>
+                  <dt><tt>path</tt></dt><dd>the path to the <a href="../Trac.html">Trac</a> API
+                  
+                  </dd>
+                  <dt><tt>method</tt></dt><dd>the XML RPC method being called
+                  
+                  </dd>
+                  <dt><tt>args</tt></dt><dd>the args (as an array) that were sent with the call
+                  
+                  </dd>
+                  </dl>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000020-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000020-source'><span class="ruby-comment cmt"># File lib/trac4r/error.rb, line 11</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">http_error</span>,<span class="ruby-identifier">host</span>,<span class="ruby-identifier">port</span>,<span class="ruby-identifier">path</span>,<span class="ruby-identifier">method</span>,<span class="ruby-identifier">args</span>)&#x000A;      <span class="ruby-identifier">http_error</span> = <span class="ruby-identifier">http_error</span>.<span class="ruby-identifier">sub</span> <span class="ruby-value str">'HTTP-Error: '</span>,<span class="ruby-value str">''</span>&#x000A;      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">http_error</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\n/</span>&#x000A;        <span class="ruby-identifier">http_error</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\n/</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>&#x000A;          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\d\d\d/</span>&#x000A;            <span class="ruby-identifier">http_error</span> = <span class="ruby-identifier">line</span>&#x000A;            <span class="ruby-keyword kw">break</span>&#x000A;          <span class="ruby-keyword kw">end</span>&#x000A;        <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-ivar">@http_status</span>,<span class="ruby-ivar">@http_message</span> = <span class="ruby-identifier">http_error</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\s+/</span>,<span class="ruby-value">2</span>)&#x000A;      <span class="ruby-ivar">@host</span> = <span class="ruby-identifier">host</span>&#x000A;      <span class="ruby-ivar">@port</span> = <span class="ruby-identifier">port</span>&#x000A;      <span class="ruby-ivar">@path</span> = <span class="ruby-identifier">path</span>&#x000A;      <span class="ruby-ivar">@method</span> = <span class="ruby-identifier">method</span>&#x000A;      <span class="ruby-ivar">@args</span> = <span class="ruby-identifier">args</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <h2>Public instance methods</h2>
+              <div class='public-instance method' id='method-M000021'>
+                <a name='M000021'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>message</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Gives a more useful message for common problems
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000021-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000021-source'><span class="ruby-comment cmt"># File lib/trac4r/error.rb, line 30</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">message</span>&#x000A;      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@http_status</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'404'</span>&#x000A;        <span class="ruby-node">&quot;Couldn't find Trac API at #{url}, check your configuration&quot;</span>&#x000A;      <span class="ruby-keyword kw">elsif</span> <span class="ruby-ivar">@http_status</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'401'</span>&#x000A;        <span class="ruby-value str">&quot;Your username/password didn't authenticate, check your configuration&quot;</span>&#x000A;      <span class="ruby-keyword kw">else</span>&#x000A;        <span class="ruby-node">&quot;#{@http_message} (#{@http_status}) when trying URL http://#{@host}:#{@port}#{@path} and method #{@command}(#{@args.join('.')})&quot;</span>&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000022'>
+                <a name='M000022'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>url</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000022-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000022-source'><span class="ruby-comment cmt"># File lib/trac4r/error.rb, line 40</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url</span>&#x000A;      <span class="ruby-node">&quot;http://#{@host}:#{@port}#{@path}&quot;</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
