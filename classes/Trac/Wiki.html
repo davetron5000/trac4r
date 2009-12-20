@@ -1,0 +1,274 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>: Trac::Wiki [Ruby interface to Trac]</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>
+          <span class='type'>Class</span>
+          Trac::Wiki
+        </h1>
+        <ol class='paths'>
+          <li>
+            <a href="../../files/lib/trac4r/wiki_rb.html">lib/trac4r/wiki.rb</a>
+          </li>
+        </ol>
+        <div class='parent'>
+          Parent:
+          <strong>Object</strong>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public class</h3>
+            <ol>
+              <li><a href="#M000007">new</a></li>
+            </ol>
+            <h3>public instance</h3>
+            <ol>
+              <li><a href="#M000014">attachments</a></li>
+              <li><a href="#M000013">delete</a></li>
+              <li><a href="#M000017">delete_attachment</a></li>
+              <li><a href="#M000015">get_attachment</a></li>
+              <li><a href="#M000010">get_html</a></li>
+              <li><a href="#M000011">get_raw</a></li>
+              <li><a href="#M000008">list</a></li>
+              <li><a href="#M000012">put</a></li>
+              <li><a href="#M000016">put_attachment</a></li>
+              <li><a href="#M000009">raw_to_html</a></li>
+            </ol>
+          </div>
+          <div id='section'>
+            <div id='methods'>
+              <h2>Public class methods</h2>
+              <div class='public-class method' id='method-M000007'>
+                <a name='M000007'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>new</span>
+                  <span class='arguments'>(trac)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000007-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000007-source'><span class="ruby-comment cmt"># File lib/trac4r/wiki.rb, line 28</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">trac</span>&#x000A;      <span class="ruby-ivar">@trac</span> = <span class="ruby-identifier">trac</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <h2>Public instance methods</h2>
+              <div class='public-instance method' id='method-M000014'>
+                <a name='M000014'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>attachments</span>
+                  <span class='arguments'>(page)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  returns a list of all attachments of a page
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000014-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000014-source'><span class="ruby-comment cmt"># File lib/trac4r/wiki.rb, line 64</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">attachments</span> <span class="ruby-identifier">page</span>&#x000A;      <span class="ruby-ivar">@trac</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value str">&quot;wiki.listAttachments&quot;</span>,<span class="ruby-identifier">page</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000013'>
+                <a name='M000013'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>delete</span>
+                  <span class='arguments'>(name)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  deletes page with given name, returning true on success.
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000013-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000013-source'><span class="ruby-comment cmt"># File lib/trac4r/wiki.rb, line 59</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete</span> <span class="ruby-identifier">name</span>&#x000A;      <span class="ruby-ivar">@trac</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value str">'wiki.deletePage'</span>,<span class="ruby-identifier">name</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000017'>
+                <a name='M000017'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>delete_attachment</span>
+                  <span class='arguments'>(path)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  deletes attachment with given `path&#8217;
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000017-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000017-source'><span class="ruby-comment cmt"># File lib/trac4r/wiki.rb, line 82</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_attachment</span> <span class="ruby-identifier">path</span>&#x000A;      <span class="ruby-ivar">@trac</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value str">&quot;wiki.deleteAttachment&quot;</span>,<span class="ruby-identifier">path</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000015'>
+                <a name='M000015'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>get_attachment</span>
+                  <span class='arguments'>(path)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  returns the content of an attachment
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000015-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000015-source'><span class="ruby-comment cmt"># File lib/trac4r/wiki.rb, line 69</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_attachment</span> <span class="ruby-identifier">path</span>&#x000A;      <span class="ruby-ivar">@trac</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value str">&quot;wiki.getAttachment&quot;</span>,<span class="ruby-identifier">path</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000010'>
+                <a name='M000010'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>get_html</span>
+                  <span class='arguments'>(name)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  returns a whole page in HTML
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000010-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000010-source'><span class="ruby-comment cmt"># File lib/trac4r/wiki.rb, line 43</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_html</span> <span class="ruby-identifier">name</span>&#x000A;      <span class="ruby-ivar">@trac</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value str">'wiki.getPageHTML'</span>,<span class="ruby-identifier">name</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000011'>
+                <a name='M000011'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>get_raw</span>
+                  <span class='arguments'>(name)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  returns a whole page in raw format
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000011-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000011-source'><span class="ruby-comment cmt"># File lib/trac4r/wiki.rb, line 48</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_raw</span> <span class="ruby-identifier">name</span>&#x000A;      <span class="ruby-ivar">@trac</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value str">'wiki.getPage'</span>,<span class="ruby-identifier">name</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000008'>
+                <a name='M000008'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>list</span>
+                  <span class='arguments'>()</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  returns a list of all pages
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000008-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000008-source'><span class="ruby-comment cmt"># File lib/trac4r/wiki.rb, line 33</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">list</span>&#x000A;      <span class="ruby-ivar">@trac</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value str">'wiki.getAllPages'</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000012'>
+                <a name='M000012'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>put</span>
+                  <span class='arguments'>(name,content,attributes={ })</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  sends a page. if the page doesn&#8217;t exist yet it is created otherwise
+                  it will be overwritten with the new content.
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000012-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000012-source'><span class="ruby-comment cmt"># File lib/trac4r/wiki.rb, line 54</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">put</span> <span class="ruby-identifier">name</span>,<span class="ruby-identifier">content</span>,<span class="ruby-identifier">attributes</span>={ }&#x000A;      <span class="ruby-ivar">@trac</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value str">'wiki.putPage'</span>,<span class="ruby-identifier">name</span>,<span class="ruby-identifier">content</span>,<span class="ruby-identifier">attributes</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000016'>
+                <a name='M000016'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>put_attachment</span>
+                  <span class='arguments'>(page,filename,description,data,replace=false)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  uploads given `data&#8217; as an attachment to given `page&#8217;. returns
+                  true on success. unlike the XMLRPC-Call this method defaults
+                  `replace&#8217; to false as we don&#8217;t want to destroy anything.
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000016-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000016-source'><span class="ruby-comment cmt"># File lib/trac4r/wiki.rb, line 77</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">put_attachment</span> <span class="ruby-identifier">page</span>,<span class="ruby-identifier">filename</span>,<span class="ruby-identifier">description</span>,<span class="ruby-identifier">data</span>,<span class="ruby-identifier">replace</span>=<span class="ruby-keyword kw">false</span>&#x000A;      <span class="ruby-ivar">@trac</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value str">&quot;wiki.putAttachmentEx&quot;</span>,<span class="ruby-identifier">page</span>,<span class="ruby-identifier">filename</span>,<span class="ruby-identifier">description</span>,<span class="ruby-identifier">data</span>,<span class="ruby-identifier">replace</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000009'>
+                <a name='M000009'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>raw_to_html</span>
+                  <span class='arguments'>(content)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  convert a raw page to html (e.g. for preview)
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000009-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000009-source'><span class="ruby-comment cmt"># File lib/trac4r/wiki.rb, line 38</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">raw_to_html</span> <span class="ruby-identifier">content</span>&#x000A;      <span class="ruby-ivar">@trac</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value str">'wiki.wikiToHtml'</span>,<span class="ruby-identifier">content</span>)&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

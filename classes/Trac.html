@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>: Trac [Ruby interface to Trac]</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <link href='../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='class' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>
+          <span class='type'>Module</span>
+          Trac
+        </h1>
+        <ol class='paths'>
+          <li>
+            <a href="../files/lib/trac4r/error_rb.html">lib/trac4r/error.rb</a>
+          </li>
+          <li class='other'>
+            <a href="../files/lib/trac4r/ticket_rb.html">lib/trac4r/ticket.rb</a>
+          </li>
+          <li class='other'>
+            <a href="../files/lib/trac4r/query_rb.html">lib/trac4r/query.rb</a>
+          </li>
+          <li class='other'>
+            <a href="../files/lib/trac4r/tickets_rb.html">lib/trac4r/tickets.rb</a>
+          </li>
+          <li class='other'>
+            <a href="../files/lib/trac4r/wiki_rb.html">lib/trac4r/wiki.rb</a>
+          </li>
+          <li class='other'>
+            <a href="../files/lib/trac4r_rb.html">lib/trac4r.rb</a>
+          </li>
+          <li>
+            <a class='show' href='#' onclick='this.parentNode.parentNode.className += " expanded"; this.parentNode.removeChild(this); return false'>show all</a>
+          </li>
+        </ol>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='description'>
+            <p>
+            This module wraps the XMLRPC interface of trac (<a
+            href="http://trac.edgewall.org/">trac.edgewall.org/</a>) into a ruby
+            library. You can now easily access trac from any ruby application without
+            having to handle all the (trivial) XMLRPC calls.
+            </p>
+            <p>
+            Example (receive list of opened tickets):
+            </p>
+            <pre>require 'trac4r/trac'&#x000A;trac = Trac.new &quot;http://dev.example.com/trac/my_awesome_project&quot;&#x000A;trac.tickets.list :include_closed =&gt; false #=&gt; [7,9,3,5,14,...]</pre>
+            <p>
+            Receive one single ticket
+            </p>
+            <pre>ticket = trac.tickets.get 9 #=&gt; #&lt;Trac::Ticket:0xb76de9b4 ... &gt;&#x000A;ticket.summary #=&gt; 'foo'&#x000A;ticket.description #=&gt; 'bar'</pre>
+            <p>
+            See documentation for <a href="Trac/Ticket.html">Trac::Ticket</a> for what
+            methods you can call on ticket.
+            </p>
+            <p>
+            Create a new ticket
+            </p>
+            <pre>trac.tickets.create &quot;summary&quot;, &quot;description&quot;, :type =&gt; 'defect', :version =&gt; '1.0', :milestone =&gt; 'bug free' #=&gt; 10</pre>
+            <p>
+            summary and description are required, the rest is optional. It can be one
+            of the following: :severity, :milestone, :status, :type, :priority,
+            :version, :reporter, :owner, :cc, :keywords
+            </p>
+          </div>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public class</h3>
+            <ol>
+              <li><a href="#M000001">new</a></li>
+            </ol>
+          </div>
+          <div id='section'>
+            <div id='class-list'>
+              <h2>Classes and Modules</h2>
+              Class <a href="Trac/Base.html" class="link">Trac::Base</a><br />
+              Class <a href="Trac/Query.html" class="link">Trac::Query</a><br />
+              Class <a href="Trac/Ticket.html" class="link">Trac::Ticket</a><br />
+              Class <a href="Trac/Tickets.html" class="link">Trac::Tickets</a><br />
+              Class <a href="Trac/TracException.html" class="link">Trac::TracException</a><br />
+              Class <a href="Trac/Wiki.html" class="link">Trac::Wiki</a><br />
+            </div>
+            <div id='methods'>
+              <h2>Public class methods</h2>
+              <div class='public-class method' id='method-M000001'>
+                <a name='M000001'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>new</span>
+                  <span class='arguments'>(url, user=nil,pass=nil)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  returns a new instance of <a href="Trac/Base.html">Trac::Base</a>
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000001-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000001-source'><span class="ruby-comment cmt"># File lib/trac4r.rb, line 58</span>&#x000A;  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">url</span>, <span class="ruby-identifier">user</span>=<span class="ruby-keyword kw">nil</span>,<span class="ruby-identifier">pass</span>=<span class="ruby-keyword kw">nil</span>&#x000A;    <span class="ruby-constant">Base</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">url</span>,<span class="ruby-identifier">user</span>,<span class="ruby-identifier">pass</span>&#x000A;  <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>
