@@ -43,19 +43,22 @@
         <div id='text'>
           <div id='description'>
             <p>
-            This class represents a ticket as it is retrieved from the database
+            This class represents a ticket as it is retrieved from the database Custom
+            fields are detected and available via runtime-dispatched methods. See
+            <tt><a href="Ticket.html#M000006">method_missing</a></tt>
             </p>
           </div>
           <div id='method-list'>
             <h2>Methods</h2>
             <h3>public class</h3>
             <ol>
-              <li><a href="#M000006">load</a></li>
+              <li><a href="#M000007">load</a></li>
               <li><a href="#M000004">new</a></li>
             </ol>
             <h3>public instance</h3>
             <ol>
               <li><a href="#M000005">check</a></li>
+              <li><a href="#M000006">method_missing</a></li>
             </ol>
           </div>
           <div id='section'>
@@ -143,8 +146,8 @@
             </div>
             <div id='methods'>
               <h2>Public class methods</h2>
-              <div class='public-class method' id='method-M000006'>
-                <a name='M000006'>      </a>
+              <div class='public-class method' id='method-M000007'>
+                <a name='M000007'>      </a>
                 <div class='synopsis'>
                   <span class='name'>load</span>
                   <span class='arguments'>(params)</span>
@@ -155,10 +158,10 @@
                   </p>
                 </div>
                 <div class='source'>
-                  <a class='source-toggle' href='#' onclick="toggleCode('M000006-source'); return false">
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000007-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000006-source'><span class="ruby-comment cmt"># File lib/trac4r/ticket.rb, line 34</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">load</span> <span class="ruby-identifier">params</span>&#x000A;      <span class="ruby-identifier">ticket</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]&#x000A;      <span class="ruby-identifier">ticket</span>.<span class="ruby-identifier">created_at</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]&#x000A;      <span class="ruby-identifier">ticket</span>.<span class="ruby-identifier">updated_at</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">2</span>]&#x000A;      <span class="ruby-identifier">attributes</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">3</span>]&#x000A;      <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>,<span class="ruby-identifier">value</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-identifier">ticket</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{key}&quot;</span>.<span class="ruby-identifier">to_sym</span>,<span class="ruby-identifier">value</span>)&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">ticket</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000007-source'><span class="ruby-comment cmt"># File lib/trac4r/ticket.rb, line 49</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">load</span> <span class="ruby-identifier">params</span>&#x000A;      <span class="ruby-identifier">ticket</span> = <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">0</span>]&#x000A;      <span class="ruby-identifier">ticket</span>.<span class="ruby-identifier">created_at</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">1</span>]&#x000A;      <span class="ruby-identifier">ticket</span>.<span class="ruby-identifier">updated_at</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">2</span>]&#x000A;      <span class="ruby-identifier">attributes</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">3</span>]&#x000A;      <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>,<span class="ruby-identifier">value</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-identifier">ticket</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{key}&quot;</span>.<span class="ruby-identifier">to_sym</span>,<span class="ruby-identifier">value</span>)&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">ticket</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <div class='public-class method' id='method-M000004'>
@@ -176,7 +179,7 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('M000004-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000004-source'><span class="ruby-comment cmt"># File lib/trac4r/ticket.rb, line 20</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">id</span>=<span class="ruby-value">0</span>&#x000A;      <span class="ruby-ivar">@id</span> = <span class="ruby-identifier">id</span>&#x000A;      <span class="ruby-ivar">@severity</span>=<span class="ruby-ivar">@milestone</span>=<span class="ruby-ivar">@status</span>=<span class="ruby-ivar">@type</span>=<span class="ruby-ivar">@priority</span>=<span class="ruby-ivar">@version</span>=<span class="ruby-ivar">@reporter</span>=<span class="ruby-ivar">@owner</span>= <span class="ruby-ivar">@cc</span>= <span class="ruby-ivar">@summary</span>=<span class="ruby-ivar">@description</span>=<span class="ruby-ivar">@keywords</span>=<span class="ruby-value str">&quot;&quot;</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000004-source'><span class="ruby-comment cmt"># File lib/trac4r/ticket.rb, line 22</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">id</span>=<span class="ruby-value">0</span>&#x000A;      <span class="ruby-ivar">@id</span> = <span class="ruby-identifier">id</span>&#x000A;      <span class="ruby-ivar">@severity</span>=<span class="ruby-ivar">@milestone</span>=<span class="ruby-ivar">@status</span>=<span class="ruby-ivar">@type</span>=<span class="ruby-ivar">@priority</span>=<span class="ruby-ivar">@version</span>=<span class="ruby-ivar">@reporter</span>=<span class="ruby-ivar">@owner</span>= <span class="ruby-ivar">@cc</span>= <span class="ruby-ivar">@summary</span>=<span class="ruby-ivar">@description</span>=<span class="ruby-ivar">@keywords</span>=<span class="ruby-value str">&quot;&quot;</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
               <h2>Public instance methods</h2>
@@ -195,7 +198,29 @@
                   <a class='source-toggle' href='#' onclick="toggleCode('M000005-source'); return false">
                     [show source]
                   </a>
-                  <pre id='M000005-source'><span class="ruby-comment cmt"># File lib/trac4r/ticket.rb, line 26</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">check</span>&#x000A;      <span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_sym</span>).<span class="ruby-identifier">nil?</span>&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                  <pre id='M000005-source'><span class="ruby-comment cmt"># File lib/trac4r/ticket.rb, line 28</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">check</span>&#x000A;      <span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>&#x000A;        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_sym</span>).<span class="ruby-identifier">nil?</span>&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000006'>
+                <a name='M000006'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>method_missing</span>
+                  <span class='arguments'>(sym,*args)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  If a method call has no args and matches an instance variable, we return
+                  its value. e.g. if our tickets have a custom field called
+                  <tt>work_units</tt>, then <tt>some_ticket.work_units</tt> will retrieve
+                  that value. This currently only allows retrieval and not updating the
+                  value.
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000006-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000006-source'><span class="ruby-comment cmt"># File lib/trac4r/ticket.rb, line 40</span>&#x000A;    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">sym</span>,<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)&#x000A;      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value str">&quot;@&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">sym</span>.<span class="ruby-identifier">to_s</span>)&#x000A;        <span class="ruby-identifier">instance_eval</span>(<span class="ruby-value str">&quot;@&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">sym</span>.<span class="ruby-identifier">to_s</span>)&#x000A;      <span class="ruby-keyword kw">else</span>&#x000A;        <span class="ruby-keyword kw">super</span>.<span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">sym</span>,<span class="ruby-identifier">args</span>)&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">end</span></pre>
                 </div>
               </div>
             </div>
