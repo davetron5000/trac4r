@@ -25,13 +25,13 @@
   <body class='page'>
     <div class='file' id='wrapper'>
       <div class='header'>
-        <h1 class='name'>README.rdoc</h1>
+        <div class='name'>README.rdoc</div>
         <div class='paths'>
           README.rdoc
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>Sun Dec 20 20:34:44 -0500 2009</span>
+          <span class='datetime'>Sun Jan 03 13:12:46 -0500 2010</span>
         </div>
       </div>
       <div id='content'>
@@ -77,6 +77,155 @@
             href="../classes/Trac.html">Trac</a> using a more Rubyesque syntax:
             </p>
             <pre># Gets all tickets in the &quot;Web&quot; component with a status of either &quot;assigned&quot;&#x000A;# &quot;accepted&quot;, or &quot;new&quot;&#x000A;available_web_tickets = trac.tickets.query(:component =&gt; 'Web', :status =&gt; [:assigned,:accepted,:new])&#x000A;&#x000A;# Ticktes that are not closed&#x000A;unclosed_tickets = trac.tickets.query(:status =&gt; &quot;!closed&quot;)&#x000A;&#x000A;# This is a bit wierd, the &quot;!&quot; in the first element means &quot;none of these values&quot;&#x000A;not_closed_nor_testing = trac.tickets.query(:status =&gt; [&quot;!closed&quot;,&quot;test&quot;])</pre>
+            <h1><tt>trac</tt></h1>
+            <pre>trac [global options] command_name [command-specific options] [--] arguments...</pre>
+            <ul>
+            <li>Use the command <tt>help</tt> to get a summary of commands
+            
+            </li>
+            <li>Use the command <tt>help command_name</tt> to get a help for
+            <tt>command_name</tt>
+            
+            </li>
+            <li>Use <tt>--</tt> to stop command line argument processing; useful if your
+            arguments have dashes in them
+            
+            </li>
+            </ul>
+            <h2>Global Options</h2>
+            <p>
+            These options are available for any command and are specified before the
+            name of the command
+            </p>
+            <dl>
+            <dt><tt>--cols=arg</tt></dt><dd>number of columns for formatting <em>( default: <tt> 136</tt>)</em>
+            
+            </dd>
+            <dt><tt>--noformat</tt></dt><dd>Do not format output
+            
+            <p>
+            By default, the output is formatted fo readability in the terminal. By
+            disabling this, the output is more &#8220;machine readable&#8221; and
+            parsable by other scripts
+            </p>
+            </dd>
+            <dt><tt>-o, --open=arg</tt></dt><dd>Command to use to open URLs <em>( default: <tt>open</tt>)</em>
+            
+            </dd>
+            <dt><tt>-p, --password=arg</tt></dt><dd>Your password
+            
+            </dd>
+            <dt><tt>-u, --user=arg</tt></dt><dd>Your username
+            
+            </dd>
+            <dt><tt>--url=arg</tt></dt><dd>URL to trac
+            
+            </dd>
+            </dl>
+            <h2>Commands</h2>
+            <dl>
+            <dt><tt>help</tt></dt><dd>Shows list of commands or help for one command
+            
+            </dd>
+            <dt><tt>initconfig</tt></dt><dd>Initialize the config file using current global options
+            
+            </dd>
+            <dt><tt>newticket</tt></dt><dd>Go to the new ticket web interface
+            
+            </dd>
+            <dt><tt>open</tt></dt><dd>Open the ticket or wiki page
+            
+            </dd>
+            <dt><tt>tickets</tt></dt><dd>Lists tickets
+            
+            </dd>
+            </dl>
+            <h3><tt>help [command]</tt></h3>
+            <p>
+            Shows list of commands or help for one command
+            </p>
+            <h3><tt>initconfig </tt></h3>
+            <p>
+            Initialize the config file using current global options
+            </p>
+            <p>
+            Initializes a configuration file where you can set default options for
+            command line flags, but globally and on a per-command basis. These defaults
+            override the built-in defaults and allow you to omit commonly-used command
+            line flags when invoking this program
+            </p>
+            <h4>Options</h4>
+            <p>
+            These options are specified <b>after</b> the command.
+            </p>
+            <dl>
+            <dt><tt>--force</tt></dt><dd>force overwrite of existing config file
+            
+            </dd>
+            </dl>
+            <h3><tt>newticket summary for the ticket</tt></h3>
+            <p>
+            Go to the new ticket web interface
+            </p>
+            <p>
+            Navigates your browser to the web interface, initialized with the values
+            you provide, but does not actually create the ticket
+            </p>
+            <h4>Options</h4>
+            <p>
+            These options are specified <b>after</b> the command.
+            </p>
+            <dl>
+            <dt><tt>-c, --component=arg</tt></dt><dd>component
+            
+            </dd>
+            <dt><tt>-p, --priority=arg</tt></dt><dd>priority
+            
+            </dd>
+            <dt><tt>-t, --type=arg</tt></dt><dd>type
+            
+            </dd>
+            </dl>
+            <h3><tt>open the id of the ticket or name of wiki page</tt></h3>
+            <p>
+            Open the ticket or wiki page
+            </p>
+            <h3><tt>tickets ticket ids (blank for all)</tt></h3>
+            <p>
+            Lists tickets
+            </p>
+            <p>
+            <b>Aliases</b>
+            </p>
+            <ul>
+            <li><b><tt>ls</tt></b>
+            
+            </li>
+            </ul>
+            <h4>Options</h4>
+            <p>
+            These options are specified <b>after</b> the command.
+            </p>
+            <dl>
+            <dt><tt>-a, --accepted</tt></dt><dd>Show tickets accepted
+            
+            </dd>
+            <dt><tt>-c, --component=arg</tt></dt><dd>Component
+            
+            </dd>
+            <dt><tt>--columns=arg</tt></dt><dd>Columns to show
+            
+            </dd>
+            <dt><tt>-l, --description</tt></dt><dd>Show full description
+            
+            </dd>
+            <dt><tt>-o, --owner=arg</tt></dt><dd>Owner (&#8220;ME&#8221; for the -u user)
+            
+            </dd>
+            <dt><tt>-q, --query=arg</tt></dt><dd>Arbitrary query (flags are included, too)
+            
+            </dd>
+            </dl>
             <h2>More Info</h2>
             <ul>
             <li><a href="http://davetron5000.github.com/trac4r">RDoc</a>
