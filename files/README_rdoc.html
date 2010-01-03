@@ -31,7 +31,7 @@
         </div>
         <div class='last-update'>
           Last Update:
-          <span class='datetime'>Sun Dec 20 14:23:46 -0500 2009</span>
+          <span class='datetime'>Sun Dec 20 20:34:44 -0500 2009</span>
         </div>
       </div>
       <div id='content'>
@@ -44,6 +44,9 @@
             <h6>=======================================</h6>
             <table>
             <tr><td valign="top">Author:</td><td>Niklas Cathor
+            
+            </td></tr>
+            <tr><td valign="top">Author:</td><td>David Copeland
             
             </td></tr>
             <tr><td valign="top">License:</td><td>See LICENSE in source distribution
@@ -67,6 +70,13 @@
             This wraps the <a href="../classes/Trac.html">Trac</a> XML-RPC plugin.
             </p>
             <pre>require 'rubygems'&#x000A;require 'trac4r'&#x000A;&#x000A;# Note that you need to point to the XMLRPC root and not the root of the trac web interface&#x000A;trac = Trac.new(&quot;http://www.example.com/trac/project/xmlrpc&quot;,&quot;username&quot;,&quot;password&quot;)&#x000A;trac.tickets.list # get all tickets&#x000A;trac.tickets.get 2334 # Get ticket #2334</pre>
+            <h3>Tickets</h3>
+            <p>
+            Trac&#8217;s backbone is tickets. The Tickets class contains many useful
+            methods, but can also run arbitrary queries against <a
+            href="../classes/Trac.html">Trac</a> using a more Rubyesque syntax:
+            </p>
+            <pre># Gets all tickets in the &quot;Web&quot; component with a status of either &quot;assigned&quot;&#x000A;# &quot;accepted&quot;, or &quot;new&quot;&#x000A;available_web_tickets = trac.tickets.query(:component =&gt; 'Web', :status =&gt; [:assigned,:accepted,:new])&#x000A;&#x000A;# Ticktes that are not closed&#x000A;unclosed_tickets = trac.tickets.query(:status =&gt; &quot;!closed&quot;)&#x000A;&#x000A;# This is a bit wierd, the &quot;!&quot; in the first element means &quot;none of these values&quot;&#x000A;not_closed_nor_testing = trac.tickets.query(:status =&gt; [&quot;!closed&quot;,&quot;test&quot;])</pre>
             <h2>More Info</h2>
             <ul>
             <li><a href="http://davetron5000.github.com/trac4r">RDoc</a>

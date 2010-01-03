@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang='en'>
+  <head>
+    <title>File: trac [Ruby interface to Trac]</title>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+    <link href='../../rdoc-style.css' media='screen' rel='stylesheet' type='text/css'>
+    <script type='text/javascript'>
+      //<![CDATA[
+        function popupCode(url) {
+          window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+        }
+        
+        function toggleCode(id) {
+          var code = document.getElementById(id)
+        
+          code.style.display = code.style.display != 'block' ? 'block' : 'none'
+          return true
+        }
+        
+        // Make codeblocks hidden by default
+        document.writeln('<' + 'style type="text/css">.method .source pre { display: none }<\/style>')
+      //]]>
+    </script>
+  </head>
+  <body class='page'>
+    <div class='file' id='wrapper'>
+      <div class='header'>
+        <h1 class='name'>trac</h1>
+        <div class='paths'>
+          bin/trac
+        </div>
+        <div class='last-update'>
+          Last Update:
+          <span class='datetime'>Sun Jan 03 13:07:13 -0500 2010</span>
+        </div>
+      </div>
+      <div id='content'>
+        <div id='text'>
+          <div id='method-list'>
+            <h2>Methods</h2>
+            <h3>public instance</h3>
+            <ol>
+              <li><a href="#M000002">bold</a></li>
+              <li><a href="#M000004">code</a></li>
+              <li><a href="#M000003">italic</a></li>
+              <li><a href="#M000001">wrap</a></li>
+            </ol>
+          </div>
+          <div id='context'>
+            <div id='requires'>
+              <h2>Required files</h2>
+              <ol>
+                <li>rubygems</li>
+                <li>gli</li>
+                <li>trac4r</li>
+                <li>rainbow</li>
+                <li>cgi</li>
+              </ol>
+            </div>
+            <div id='includes'>
+              <h2>Included modules</h2>
+              <ol>
+                <li>GLI</li>
+              </ol>
+            </div>
+          </div>
+          <div id='section'>
+            <div id='constants-list'>
+              <h2>Constants</h2>
+              <div class='name-list'>
+                <table summary='Constants'>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>OPENER_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>RUBY_PLATFORM =~ /darwin/ ? 'open' : nil</td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>COLUMNS_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>cols[2].gsub(' columns','')</td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>COLUMNS_DEFAULT</td>
+                    <td>=</td>
+                    <td class='context-item-value'>nil</td>
+                  </tr>
+                  <tr class='top-aligned-row context-row'>
+                    <td class='context-item-name'>FORMATTING</td>
+                    <td>=</td>
+                    <td class='context-item-value'>{   'id' =&gt; { :color =&gt; :green, :size =&gt; 6 },   'status' =&gt; { :color =&gt; :cyan, :size =&gt; 9 },   'owner' =&gt; { :size =&gt; 17 },   'component' =&gt; { :size =&gt; 10, :color =&gt; :magenta },   'milestone' =&gt; { :size =&gt; 28, :color =&gt; :cyan }, }</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id='methods'>
+              <h2>Public instance methods</h2>
+              <div class='public-instance method' id='method-M000002'>
+                <a name='M000002'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>bold</span>
+                  <span class='arguments'>(string)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000002-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000002-source'><span class="ruby-comment cmt"># File bin/trac, line 212</span>&#x000A;<span class="ruby-keyword kw">def</span> <span class="ruby-identifier">bold</span>(<span class="ruby-identifier">string</span>)&#x000A;  <span class="ruby-identifier">desc</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;'''&quot;</span>)&#x000A;  <span class="ruby-identifier">description</span> = <span class="ruby-value str">&quot;&quot;</span>&#x000A;  <span class="ruby-identifier">bold</span> = <span class="ruby-keyword kw">false</span>&#x000A;  <span class="ruby-identifier">desc</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">description</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">bright</span>.<span class="ruby-identifier">foreground</span>(<span class="ruby-identifier">:cyan</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">bold</span>&#x000A;    <span class="ruby-identifier">description</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">reset</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">bold</span>&#x000A;    <span class="ruby-identifier">bold</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">bold</span>&#x000A;  <span class="ruby-keyword kw">end</span>&#x000A;  <span class="ruby-identifier">description</span>&#x000A;<span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000004'>
+                <a name='M000004'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>code</span>
+                  <span class='arguments'>(string)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000004-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000004-source'><span class="ruby-comment cmt"># File bin/trac, line 236</span>&#x000A;<span class="ruby-keyword kw">def</span> <span class="ruby-identifier">code</span>(<span class="ruby-identifier">string</span>)&#x000A;  <span class="ruby-identifier">desc</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;`&quot;</span>)&#x000A;  <span class="ruby-identifier">description</span> = <span class="ruby-value str">&quot;&quot;</span>&#x000A;  <span class="ruby-identifier">bold</span> = <span class="ruby-keyword kw">false</span>&#x000A;  <span class="ruby-identifier">desc</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">description</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">bright</span>.<span class="ruby-identifier">foreground</span>(<span class="ruby-identifier">:green</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">bold</span>&#x000A;    <span class="ruby-identifier">description</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">reset</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">bold</span>&#x000A;    <span class="ruby-identifier">bold</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">bold</span>&#x000A;  <span class="ruby-keyword kw">end</span>&#x000A;  <span class="ruby-identifier">in_code</span> = <span class="ruby-keyword kw">false</span>&#x000A;  <span class="ruby-identifier">coded</span> = <span class="ruby-value str">''</span>&#x000A;  <span class="ruby-identifier">description</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\n/</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">ignore</span> = <span class="ruby-keyword kw">false</span>&#x000A;    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\{\{\{\s*$/</span>&#x000A;      <span class="ruby-identifier">in_code</span> = <span class="ruby-keyword kw">true</span>&#x000A;      <span class="ruby-identifier">ignore</span> = <span class="ruby-keyword kw">true</span>&#x000A;    <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^\}\}\}/</span>&#x000A;      <span class="ruby-identifier">in_code</span> = <span class="ruby-keyword kw">false</span>&#x000A;      <span class="ruby-identifier">ignore</span> = <span class="ruby-keyword kw">true</span>&#x000A;    <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">ignore</span>&#x000A;      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">in_code</span>&#x000A;        <span class="ruby-identifier">coded</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">bright</span>.<span class="ruby-identifier">foreground</span>(<span class="ruby-identifier">:green</span>)&#x000A;      <span class="ruby-keyword kw">else</span>&#x000A;        <span class="ruby-identifier">coded</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">line</span>&#x000A;      <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-keyword kw">end</span>&#x000A;    <span class="ruby-identifier">coded</span> <span class="ruby-operator">+=</span> <span class="ruby-value str">&quot;\n&quot;</span>&#x000A;  <span class="ruby-keyword kw">end</span>&#x000A;  <span class="ruby-identifier">coded</span>&#x000A;<span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000003'>
+                <a name='M000003'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>italic</span>
+                  <span class='arguments'>(string)</span>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000003-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000003-source'><span class="ruby-comment cmt"># File bin/trac, line 224</span>&#x000A;<span class="ruby-keyword kw">def</span> <span class="ruby-identifier">italic</span>(<span class="ruby-identifier">string</span>)&#x000A;  <span class="ruby-identifier">desc</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;''&quot;</span>)&#x000A;  <span class="ruby-identifier">description</span> = <span class="ruby-value str">&quot;&quot;</span>&#x000A;  <span class="ruby-identifier">bold</span> = <span class="ruby-keyword kw">false</span>&#x000A;  <span class="ruby-identifier">desc</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-identifier">description</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">italic</span>.<span class="ruby-identifier">foreground</span>(<span class="ruby-identifier">:magenta</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">bold</span>&#x000A;    <span class="ruby-identifier">description</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">reset</span> <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">bold</span>&#x000A;    <span class="ruby-identifier">bold</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">bold</span>&#x000A;  <span class="ruby-keyword kw">end</span>&#x000A;  <span class="ruby-identifier">description</span>&#x000A;<span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+              <div class='public-instance method' id='method-M000001'>
+                <a name='M000001'>      </a>
+                <div class='synopsis'>
+                  <span class='name'>wrap</span>
+                  <span class='arguments'>(string,indent,cols)</span>
+                </div>
+                <div class='description'>
+                  <p>
+                  Not sure about this
+                  </p>
+                </div>
+                <div class='source'>
+                  <a class='source-toggle' href='#' onclick="toggleCode('M000001-source'); return false">
+                    [show source]
+                  </a>
+                  <pre id='M000001-source'><span class="ruby-comment cmt"># File bin/trac, line 184</span>&#x000A;<span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wrap</span>(<span class="ruby-identifier">string</span>,<span class="ruby-identifier">indent</span>,<span class="ruby-identifier">cols</span>)&#x000A;  <span class="ruby-identifier">cols_left</span> = <span class="ruby-identifier">cols</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">indent</span>&#x000A;  <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Your terminal is too small for formatting&quot;</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">cols_left</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">5</span>)&#x000A;  <span class="ruby-identifier">return_me</span> = <span class="ruby-value str">&quot;&quot;</span>&#x000A;  <span class="ruby-identifier">line</span> = <span class="ruby-value str">&quot;&quot;</span>&#x000A;  <span class="ruby-identifier">prev_word</span> = <span class="ruby-value str">&quot;&quot;</span>&#x000A;  <span class="ruby-identifier">string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\s/</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">word</span><span class="ruby-operator">|</span>&#x000A;    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">cols_left</span>&#x000A;      <span class="ruby-identifier">line</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; #{word}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">!=</span> <span class="ruby-value str">&quot;&quot;</span>&#x000A;      <span class="ruby-identifier">line</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{word}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;&quot;</span>&#x000A;      <span class="ruby-identifier">prev_word</span> = <span class="ruby-identifier">word</span>&#x000A;    <span class="ruby-keyword kw">else</span>&#x000A;      <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/#{prev_word}$/</span>,<span class="ruby-value str">''</span>)&#x000A;      <span class="ruby-identifier">return_me</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">underline</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span>&#x000A;      <span class="ruby-identifier">indent</span>.<span class="ruby-identifier">times</span> { <span class="ruby-identifier">return_me</span> <span class="ruby-operator">+=</span>  <span class="ruby-value str">&quot; &quot;</span> }&#x000A;      <span class="ruby-identifier">line</span> = <span class="ruby-identifier">prev_word</span>&#x000A;    <span class="ruby-keyword kw">end</span>&#x000A;  <span class="ruby-keyword kw">end</span>&#x000A;  <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">line</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">cols_left</span>)&#x000A;    <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-node">/#{prev_word}$/</span>,<span class="ruby-value str">''</span>)&#x000A;    <span class="ruby-identifier">return_me</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">underline</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;\n&quot;</span>&#x000A;    <span class="ruby-identifier">indent</span>.<span class="ruby-identifier">times</span> { <span class="ruby-identifier">return_me</span> <span class="ruby-operator">+=</span>  <span class="ruby-value str">&quot; &quot;</span> }&#x000A;    <span class="ruby-identifier">line</span> = <span class="ruby-identifier">prev_word</span>&#x000A;  <span class="ruby-keyword kw">end</span>&#x000A;  <span class="ruby-identifier">return_me</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">underline</span>&#x000A;  <span class="ruby-identifier">return_me</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/^\s/</span>,<span class="ruby-value str">''</span>)&#x000A;<span class="ruby-keyword kw">end</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id='footer-push'></div>
+    </div>
+    <div id='footer'>
+      <a href="http://github.com/mislav/hanna/tree/master"><strong>Hanna</strong> RDoc template</a>
+    </div>
+  </body>
+</html>

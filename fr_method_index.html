@@ -4331,46 +4331,53 @@
         
         Element.addMethods();
         var search_index = [
-          { method: 'actions', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000038"><span class="method_name">actions</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'api_version', module: 'trac::base', html: '<a href="classes/Trac/Base.html#M000020"><span class="method_name">api_version</span> <span class="module_name">(Trac::Base)</span></a>' },
-          { method: 'attachments', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000034"><span class="method_name">attachments</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'attachments', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000015"><span class="method_name">attachments</span> <span class="module_name">(Trac::Wiki)</span></a>' },
-          { method: 'changelog', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000032"><span class="method_name">changelog</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'changes', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000033"><span class="method_name">changes</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'check', module: 'trac::ticket', html: '<a href="classes/Trac/Ticket.html#M000005"><span class="method_name">check</span> <span class="module_name">(Trac::Ticket)</span></a>' },
-          { method: 'create', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000029"><span class="method_name">create</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'delete', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000031"><span class="method_name">delete</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'delete', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000014"><span class="method_name">delete</span> <span class="module_name">(Trac::Wiki)</span></a>' },
-          { method: 'delete_attachment', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000037"><span class="method_name">delete_attachment</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'delete_attachment', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000018"><span class="method_name">delete_attachment</span> <span class="module_name">(Trac::Wiki)</span></a>' },
-          { method: 'get', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000028"><span class="method_name">get</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'get_all', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000027"><span class="method_name">get_all</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'get_attachment', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000035"><span class="method_name">get_attachment</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'get_attachment', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000016"><span class="method_name">get_attachment</span> <span class="module_name">(Trac::Wiki)</span></a>' },
-          { method: 'get_html', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000011"><span class="method_name">get_html</span> <span class="module_name">(Trac::Wiki)</span></a>' },
-          { method: 'get_raw', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000012"><span class="method_name">get_raw</span> <span class="module_name">(Trac::Wiki)</span></a>' },
-          { method: 'get_settings', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000040"><span class="method_name">get_settings</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'list', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000009"><span class="method_name">list</span> <span class="module_name">(Trac::Wiki)</span></a>' },
-          { method: 'list', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000025"><span class="method_name">list</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'list_closed', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000026"><span class="method_name">list_closed</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'load', module: 'trac::ticket', html: '<a href="classes/Trac/Ticket.html#M000007"><span class="method_name">load</span> <span class="module_name">(Trac::Ticket)</span></a>' },
-          { method: 'message', module: 'trac::tracexception', html: '<a href="classes/Trac/TracException.html#M000022"><span class="method_name">message</span> <span class="module_name">(Trac::TracException)</span></a>' },
-          { method: 'method_missing', module: 'trac::ticket', html: '<a href="classes/Trac/Ticket.html#M000006"><span class="method_name">method_missing</span> <span class="module_name">(Trac::Ticket)</span></a>' },
-          { method: 'new', module: 'trac::tracexception', html: '<a href="classes/Trac/TracException.html#M000021"><span class="method_name">new</span> <span class="module_name">(Trac::TracException)</span></a>' },
-          { method: 'new', module: 'trac', html: '<a href="classes/Trac.html#M000001"><span class="method_name">new</span> <span class="module_name">(Trac)</span></a>' },
-          { method: 'new', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000024"><span class="method_name">new</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'new', module: 'trac::base', html: '<a href="classes/Trac/Base.html#M000019"><span class="method_name">new</span> <span class="module_name">(Trac::Base)</span></a>' },
-          { method: 'new', module: 'trac::query', html: '<a href="classes/Trac/Query.html#M000002"><span class="method_name">new</span> <span class="module_name">(Trac::Query)</span></a>' },
-          { method: 'new', module: 'trac::ticket', html: '<a href="classes/Trac/Ticket.html#M000004"><span class="method_name">new</span> <span class="module_name">(Trac::Ticket)</span></a>' },
-          { method: 'new', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000008"><span class="method_name">new</span> <span class="module_name">(Trac::Wiki)</span></a>' },
-          { method: 'put', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000013"><span class="method_name">put</span> <span class="module_name">(Trac::Wiki)</span></a>' },
-          { method: 'put_attachment', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000036"><span class="method_name">put_attachment</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'put_attachment', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000017"><span class="method_name">put_attachment</span> <span class="module_name">(Trac::Wiki)</span></a>' },
-          { method: 'query', module: 'trac::query', html: '<a href="classes/Trac/Query.html#M000003"><span class="method_name">query</span> <span class="module_name">(Trac::Query)</span></a>' },
-          { method: 'raw_to_html', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000010"><span class="method_name">raw_to_html</span> <span class="module_name">(Trac::Wiki)</span></a>' },
-          { method: 'settings', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000039"><span class="method_name">settings</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'update', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000030"><span class="method_name">update</span> <span class="module_name">(Trac::Tickets)</span></a>' },
-          { method: 'url', module: 'trac::tracexception', html: '<a href="classes/Trac/TracException.html#M000023"><span class="method_name">url</span> <span class="module_name">(Trac::TracException)</span></a>' },
+          { method: 'actions', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000045"><span class="method_name">actions</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'api_version', module: 'trac::base', html: '<a href="classes/Trac/Base.html#M000026"><span class="method_name">api_version</span> <span class="module_name">(Trac::Base)</span></a>' },
+          { method: 'attachments', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000020"><span class="method_name">attachments</span> <span class="module_name">(Trac::Wiki)</span></a>' },
+          { method: 'attachments', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000041"><span class="method_name">attachments</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'bold', module: 'bin/trac', html: '<a href="files/bin/trac.html#M000002"><span class="method_name">bold</span> <span class="module_name">(bin/trac)</span></a>' },
+          { method: 'changelog', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000039"><span class="method_name">changelog</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'changes', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000040"><span class="method_name">changes</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'check', module: 'trac::ticket', html: '<a href="classes/Trac/Ticket.html#M000009"><span class="method_name">check</span> <span class="module_name">(Trac::Ticket)</span></a>' },
+          { method: 'code', module: 'bin/trac', html: '<a href="files/bin/trac.html#M000004"><span class="method_name">code</span> <span class="module_name">(bin/trac)</span></a>' },
+          { method: 'create', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000036"><span class="method_name">create</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'delete', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000038"><span class="method_name">delete</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'delete', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000019"><span class="method_name">delete</span> <span class="module_name">(Trac::Wiki)</span></a>' },
+          { method: 'delete_attachment', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000023"><span class="method_name">delete_attachment</span> <span class="module_name">(Trac::Wiki)</span></a>' },
+          { method: 'delete_attachment', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000044"><span class="method_name">delete_attachment</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'get', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000035"><span class="method_name">get</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'get_all', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000034"><span class="method_name">get_all</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'get_attachment', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000021"><span class="method_name">get_attachment</span> <span class="module_name">(Trac::Wiki)</span></a>' },
+          { method: 'get_attachment', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000042"><span class="method_name">get_attachment</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'get_html', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000015"><span class="method_name">get_html</span> <span class="module_name">(Trac::Wiki)</span></a>' },
+          { method: 'get_info', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000016"><span class="method_name">get_info</span> <span class="module_name">(Trac::Wiki)</span></a>' },
+          { method: 'get_raw', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000017"><span class="method_name">get_raw</span> <span class="module_name">(Trac::Wiki)</span></a>' },
+          { method: 'get_settings', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000047"><span class="method_name">get_settings</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'italic', module: 'bin/trac', html: '<a href="files/bin/trac.html#M000003"><span class="method_name">italic</span> <span class="module_name">(bin/trac)</span></a>' },
+          { method: 'list', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000031"><span class="method_name">list</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'list', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000013"><span class="method_name">list</span> <span class="module_name">(Trac::Wiki)</span></a>' },
+          { method: 'list_closed', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000033"><span class="method_name">list_closed</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'load', module: 'trac::ticket', html: '<a href="classes/Trac/Ticket.html#M000011"><span class="method_name">load</span> <span class="module_name">(Trac::Ticket)</span></a>' },
+          { method: 'message', module: 'trac::tracexception', html: '<a href="classes/Trac/TracException.html#M000028"><span class="method_name">message</span> <span class="module_name">(Trac::TracException)</span></a>' },
+          { method: 'method_missing', module: 'trac::ticket', html: '<a href="classes/Trac/Ticket.html#M000010"><span class="method_name">method_missing</span> <span class="module_name">(Trac::Ticket)</span></a>' },
+          { method: 'new', module: 'trac::query', html: '<a href="classes/Trac/Query.html#M000006"><span class="method_name">new</span> <span class="module_name">(Trac::Query)</span></a>' },
+          { method: 'new', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000030"><span class="method_name">new</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'new', module: 'trac', html: '<a href="classes/Trac.html#M000005"><span class="method_name">new</span> <span class="module_name">(Trac)</span></a>' },
+          { method: 'new', module: 'trac::ticket', html: '<a href="classes/Trac/Ticket.html#M000008"><span class="method_name">new</span> <span class="module_name">(Trac::Ticket)</span></a>' },
+          { method: 'new', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000012"><span class="method_name">new</span> <span class="module_name">(Trac::Wiki)</span></a>' },
+          { method: 'new', module: 'trac::tracexception', html: '<a href="classes/Trac/TracException.html#M000027"><span class="method_name">new</span> <span class="module_name">(Trac::TracException)</span></a>' },
+          { method: 'new', module: 'trac::base', html: '<a href="classes/Trac/Base.html#M000024"><span class="method_name">new</span> <span class="module_name">(Trac::Base)</span></a>' },
+          { method: 'put', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000018"><span class="method_name">put</span> <span class="module_name">(Trac::Wiki)</span></a>' },
+          { method: 'put_attachment', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000043"><span class="method_name">put_attachment</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'put_attachment', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000022"><span class="method_name">put_attachment</span> <span class="module_name">(Trac::Wiki)</span></a>' },
+          { method: 'query', module: 'trac::base', html: '<a href="classes/Trac/Base.html#M000025"><span class="method_name">query</span> <span class="module_name">(Trac::Base)</span></a>' },
+          { method: 'query', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000032"><span class="method_name">query</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'query', module: 'trac::query', html: '<a href="classes/Trac/Query.html#M000007"><span class="method_name">query</span> <span class="module_name">(Trac::Query)</span></a>' },
+          { method: 'raw_to_html', module: 'trac::wiki', html: '<a href="classes/Trac/Wiki.html#M000014"><span class="method_name">raw_to_html</span> <span class="module_name">(Trac::Wiki)</span></a>' },
+          { method: 'settings', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000046"><span class="method_name">settings</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'update', module: 'trac::tickets', html: '<a href="classes/Trac/Tickets.html#M000037"><span class="method_name">update</span> <span class="module_name">(Trac::Tickets)</span></a>' },
+          { method: 'url', module: 'trac::tracexception', html: '<a href="classes/Trac/TracException.html#M000029"><span class="method_name">url</span> <span class="module_name">(Trac::TracException)</span></a>' },
+          { method: 'wrap', module: 'bin/trac', html: '<a href="files/bin/trac.html#M000001"><span class="method_name">wrap</span> <span class="module_name">(bin/trac)</span></a>' },
         ]
         $(document).observe('dom:loaded', function() {
         	// Setup search-during-typing.
@@ -4433,46 +4440,53 @@
       </form>
       <ol class='methods' id='search-results' style='display: none'></ol>
       <ol class='methods' id='index-entries'>
-        <li><a href="classes/Trac/Tickets.html#M000038"><span class="method_name">actions</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Base.html#M000020"><span class="method_name">api_version</span> <span class="module_name">(Trac::Base)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000034"><span class="method_name">attachments</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Wiki.html#M000015"><span class="method_name">attachments</span> <span class="module_name">(Trac::Wiki)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000032"><span class="method_name">changelog</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000033"><span class="method_name">changes</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Ticket.html#M000005"><span class="method_name">check</span> <span class="module_name">(Trac::Ticket)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000029"><span class="method_name">create</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000031"><span class="method_name">delete</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Wiki.html#M000014"><span class="method_name">delete</span> <span class="module_name">(Trac::Wiki)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000037"><span class="method_name">delete_attachment</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Wiki.html#M000018"><span class="method_name">delete_attachment</span> <span class="module_name">(Trac::Wiki)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000028"><span class="method_name">get</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000027"><span class="method_name">get_all</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000035"><span class="method_name">get_attachment</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Wiki.html#M000016"><span class="method_name">get_attachment</span> <span class="module_name">(Trac::Wiki)</span></a></li>
-        <li><a href="classes/Trac/Wiki.html#M000011"><span class="method_name">get_html</span> <span class="module_name">(Trac::Wiki)</span></a></li>
-        <li><a href="classes/Trac/Wiki.html#M000012"><span class="method_name">get_raw</span> <span class="module_name">(Trac::Wiki)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000040"><span class="method_name">get_settings</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Wiki.html#M000009"><span class="method_name">list</span> <span class="module_name">(Trac::Wiki)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000025"><span class="method_name">list</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000026"><span class="method_name">list_closed</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Ticket.html#M000007"><span class="method_name">load</span> <span class="module_name">(Trac::Ticket)</span></a></li>
-        <li><a href="classes/Trac/TracException.html#M000022"><span class="method_name">message</span> <span class="module_name">(Trac::TracException)</span></a></li>
-        <li><a href="classes/Trac/Ticket.html#M000006"><span class="method_name">method_missing</span> <span class="module_name">(Trac::Ticket)</span></a></li>
-        <li><a href="classes/Trac/TracException.html#M000021"><span class="method_name">new</span> <span class="module_name">(Trac::TracException)</span></a></li>
-        <li><a href="classes/Trac.html#M000001"><span class="method_name">new</span> <span class="module_name">(Trac)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000024"><span class="method_name">new</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Base.html#M000019"><span class="method_name">new</span> <span class="module_name">(Trac::Base)</span></a></li>
-        <li><a href="classes/Trac/Query.html#M000002"><span class="method_name">new</span> <span class="module_name">(Trac::Query)</span></a></li>
-        <li><a href="classes/Trac/Ticket.html#M000004"><span class="method_name">new</span> <span class="module_name">(Trac::Ticket)</span></a></li>
-        <li><a href="classes/Trac/Wiki.html#M000008"><span class="method_name">new</span> <span class="module_name">(Trac::Wiki)</span></a></li>
-        <li><a href="classes/Trac/Wiki.html#M000013"><span class="method_name">put</span> <span class="module_name">(Trac::Wiki)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000036"><span class="method_name">put_attachment</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Wiki.html#M000017"><span class="method_name">put_attachment</span> <span class="module_name">(Trac::Wiki)</span></a></li>
-        <li><a href="classes/Trac/Query.html#M000003"><span class="method_name">query</span> <span class="module_name">(Trac::Query)</span></a></li>
-        <li><a href="classes/Trac/Wiki.html#M000010"><span class="method_name">raw_to_html</span> <span class="module_name">(Trac::Wiki)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000039"><span class="method_name">settings</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/Tickets.html#M000030"><span class="method_name">update</span> <span class="module_name">(Trac::Tickets)</span></a></li>
-        <li><a href="classes/Trac/TracException.html#M000023"><span class="method_name">url</span> <span class="module_name">(Trac::TracException)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000045"><span class="method_name">actions</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Base.html#M000026"><span class="method_name">api_version</span> <span class="module_name">(Trac::Base)</span></a></li>
+        <li><a href="classes/Trac/Wiki.html#M000020"><span class="method_name">attachments</span> <span class="module_name">(Trac::Wiki)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000041"><span class="method_name">attachments</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="files/bin/trac.html#M000002"><span class="method_name">bold</span> <span class="module_name">(bin/trac)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000039"><span class="method_name">changelog</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000040"><span class="method_name">changes</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Ticket.html#M000009"><span class="method_name">check</span> <span class="module_name">(Trac::Ticket)</span></a></li>
+        <li><a href="files/bin/trac.html#M000004"><span class="method_name">code</span> <span class="module_name">(bin/trac)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000036"><span class="method_name">create</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000038"><span class="method_name">delete</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Wiki.html#M000019"><span class="method_name">delete</span> <span class="module_name">(Trac::Wiki)</span></a></li>
+        <li><a href="classes/Trac/Wiki.html#M000023"><span class="method_name">delete_attachment</span> <span class="module_name">(Trac::Wiki)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000044"><span class="method_name">delete_attachment</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000035"><span class="method_name">get</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000034"><span class="method_name">get_all</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Wiki.html#M000021"><span class="method_name">get_attachment</span> <span class="module_name">(Trac::Wiki)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000042"><span class="method_name">get_attachment</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Wiki.html#M000015"><span class="method_name">get_html</span> <span class="module_name">(Trac::Wiki)</span></a></li>
+        <li><a href="classes/Trac/Wiki.html#M000016"><span class="method_name">get_info</span> <span class="module_name">(Trac::Wiki)</span></a></li>
+        <li><a href="classes/Trac/Wiki.html#M000017"><span class="method_name">get_raw</span> <span class="module_name">(Trac::Wiki)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000047"><span class="method_name">get_settings</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="files/bin/trac.html#M000003"><span class="method_name">italic</span> <span class="module_name">(bin/trac)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000031"><span class="method_name">list</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Wiki.html#M000013"><span class="method_name">list</span> <span class="module_name">(Trac::Wiki)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000033"><span class="method_name">list_closed</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Ticket.html#M000011"><span class="method_name">load</span> <span class="module_name">(Trac::Ticket)</span></a></li>
+        <li><a href="classes/Trac/TracException.html#M000028"><span class="method_name">message</span> <span class="module_name">(Trac::TracException)</span></a></li>
+        <li><a href="classes/Trac/Ticket.html#M000010"><span class="method_name">method_missing</span> <span class="module_name">(Trac::Ticket)</span></a></li>
+        <li><a href="classes/Trac/Query.html#M000006"><span class="method_name">new</span> <span class="module_name">(Trac::Query)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000030"><span class="method_name">new</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac.html#M000005"><span class="method_name">new</span> <span class="module_name">(Trac)</span></a></li>
+        <li><a href="classes/Trac/Ticket.html#M000008"><span class="method_name">new</span> <span class="module_name">(Trac::Ticket)</span></a></li>
+        <li><a href="classes/Trac/Wiki.html#M000012"><span class="method_name">new</span> <span class="module_name">(Trac::Wiki)</span></a></li>
+        <li><a href="classes/Trac/TracException.html#M000027"><span class="method_name">new</span> <span class="module_name">(Trac::TracException)</span></a></li>
+        <li><a href="classes/Trac/Base.html#M000024"><span class="method_name">new</span> <span class="module_name">(Trac::Base)</span></a></li>
+        <li><a href="classes/Trac/Wiki.html#M000018"><span class="method_name">put</span> <span class="module_name">(Trac::Wiki)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000043"><span class="method_name">put_attachment</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Wiki.html#M000022"><span class="method_name">put_attachment</span> <span class="module_name">(Trac::Wiki)</span></a></li>
+        <li><a href="classes/Trac/Base.html#M000025"><span class="method_name">query</span> <span class="module_name">(Trac::Base)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000032"><span class="method_name">query</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Query.html#M000007"><span class="method_name">query</span> <span class="module_name">(Trac::Query)</span></a></li>
+        <li><a href="classes/Trac/Wiki.html#M000014"><span class="method_name">raw_to_html</span> <span class="module_name">(Trac::Wiki)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000046"><span class="method_name">settings</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/Tickets.html#M000037"><span class="method_name">update</span> <span class="module_name">(Trac::Tickets)</span></a></li>
+        <li><a href="classes/Trac/TracException.html#M000029"><span class="method_name">url</span> <span class="module_name">(Trac::TracException)</span></a></li>
+        <li><a href="files/bin/trac.html#M000001"><span class="method_name">wrap</span> <span class="module_name">(bin/trac)</span></a></li>
       </ol>
     </div>
   </body>
