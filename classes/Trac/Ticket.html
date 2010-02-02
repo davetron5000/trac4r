@@ -38,7 +38,7 @@
         <p>
 This class represents a ticket as it is retrieved from the database Custom
 fields are detected and available via runtime-dispatched methods. See
-<tt><a href="Ticket.html#M000007">method_missing</a></tt>
+<tt><a href="Ticket.html#M000006">method_missing</a></tt>
 </p>
 
     </div>
@@ -58,7 +58,7 @@ fields are detected and available via runtime-dispatched methods. See
         <dd>
             <ul>
                 
-                <li><a href="#M000005">check</a></li>
+                <li><a href="#M000004">check</a></li>
                 
             </ul>
         </dd>
@@ -76,7 +76,7 @@ fields are detected and available via runtime-dispatched methods. See
         <dd>
             <ul>
                 
-                <li><a href="#M000007">method_missing</a></li>
+                <li><a href="#M000006">method_missing</a></li>
                 
             </ul>
         </dd>
@@ -85,7 +85,7 @@ fields are detected and available via runtime-dispatched methods. See
         <dd>
             <ul>
                 
-                <li><a href="#M000004">new</a></li>
+                <li><a href="#M000003">new</a></li>
                 
             </ul>
         </dd>
@@ -273,9 +273,9 @@ loads a ticket from the XMLRPC response
             </div>
             
             <div class="method">
-                <div class="title" id="M000004">
+                <div class="title" id="M000003">
                     
-                    <a name="M000004"></a><b>new</b>(id=0)
+                    <a name="M000003"></a><b>new</b>(id=0)
                     
                 </div>
                 
@@ -291,12 +291,12 @@ returns a new ticket
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000004_source')" id="l_M000004_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000003_source')" id="l_M000003_source">show</a>
                         
                         | <a href="http://github.com/davetron5000/trac4r/blob/e50dfe3952e18f6450674b397a80875c23f4a05b/lib/trac4r/ticket.rb#L22" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000004_source" class="dyn-source">
+                    <div id="M000003_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/trac4r/ticket.rb, line 22</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">id</span>=<span class="ruby-value">0</span>
       <span class="ruby-ivar">@id</span> = <span class="ruby-identifier">id</span>
@@ -310,9 +310,9 @@ returns a new ticket
             <div class="sectiontitle">Instance Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000005">
+                <div class="title" id="M000004">
                     
-                    <a name="M000005"></a><b>check</b>()
+                    <a name="M000004"></a><b>check</b>()
                     
                 </div>
                 
@@ -328,12 +328,12 @@ checks if all attributes are set
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000005_source')" id="l_M000005_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000004_source')" id="l_M000004_source">show</a>
                         
                         | <a href="http://github.com/davetron5000/trac4r/blob/e50dfe3952e18f6450674b397a80875c23f4a05b/lib/trac4r/ticket.rb#L28" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000005_source" class="dyn-source">
+                    <div id="M000004_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/trac4r/ticket.rb, line 28</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">check</span>
       <span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
@@ -347,9 +347,9 @@ checks if all attributes are set
             </div>
             
             <div class="method">
-                <div class="title" id="M000007">
+                <div class="title" id="M000006">
                     
-                    <a name="M000007"></a><b>method_missing</b>(sym,*args)
+                    <a name="M000006"></a><b>method_missing</b>(sym,*args)
                     
                 </div>
                 
@@ -372,12 +372,12 @@ field, but you don&#8217;t wish to check for it
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000007_source')" id="l_M000007_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000006_source')" id="l_M000006_source">show</a>
                         
                         | <a href="http://github.com/davetron5000/trac4r/blob/e50dfe3952e18f6450674b397a80875c23f4a05b/lib/trac4r/ticket.rb#L43" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000007_source" class="dyn-source">
+                    <div id="M000006_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/trac4r/ticket.rb, line 43</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">sym</span>,<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
       <span class="ruby-identifier">method</span> = <span class="ruby-identifier">sym</span>.<span class="ruby-identifier">to_s</span>

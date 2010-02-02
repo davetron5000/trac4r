@@ -84,9 +84,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000024">get</a>,</li>
+                <li><a href="#M000026">get</a>,</li>
                 
-                <li><a href="#M000018">get_all</a>,</li>
+                <li><a href="#M000020">get_all</a>,</li>
                 
                 <li><a href="#M000033">get_attachment</a>,</li>
                 
@@ -99,9 +99,9 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000010">list</a>,</li>
+                <li><a href="#M000013">list</a>,</li>
                 
-                <li><a href="#M000017">list_closed</a></li>
+                <li><a href="#M000019">list_closed</a></li>
                 
             </ul>
         </dd>
@@ -110,7 +110,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000009">new</a></li>
+                <li><a href="#M000012">new</a></li>
                 
             </ul>
         </dd>
@@ -128,7 +128,7 @@
         <dd>
             <ul>
                 
-                <li><a href="#M000016">query</a></li>
+                <li><a href="#M000018">query</a></li>
                 
             </ul>
         </dd>
@@ -168,9 +168,9 @@
             <div class="sectiontitle">Class Public methods</div>
             
             <div class="method">
-                <div class="title" id="M000009">
+                <div class="title" id="M000012">
                     
-                    <a name="M000009"></a><b>new</b>(trac)
+                    <a name="M000012"></a><b>new</b>(trac)
                     
                 </div>
                 
@@ -179,12 +179,12 @@
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000009_source')" id="l_M000009_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000012_source')" id="l_M000012_source">show</a>
                         
                         | <a href="http://github.com/davetron5000/trac4r/blob/0c428d821579be6dae39a1e33c58857398aab90f/lib/trac4r/tickets.rb#L28" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000009_source" class="dyn-source">
+                    <div id="M000012_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/trac4r/tickets.rb, line 28</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">trac</span>
       <span class="ruby-ivar">@trac</span> = <span class="ruby-identifier">trac</span>
@@ -439,9 +439,9 @@ deletes given attachment
             </div>
             
             <div class="method">
-                <div class="title" id="M000024">
+                <div class="title" id="M000026">
                     
-                    <a name="M000024"></a><b>get</b>(id)
+                    <a name="M000026"></a><b>get</b>(id)
                     
                 </div>
                 
@@ -457,12 +457,12 @@ fetch a ticket. Returns instance of <a href="Ticket.html">Trac::Ticket</a>
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000024_source')" id="l_M000024_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000026_source')" id="l_M000026_source">show</a>
                         
                         | <a href="http://github.com/davetron5000/trac4r/blob/0c428d821579be6dae39a1e33c58857398aab90f/lib/trac4r/tickets.rb#L83" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000024_source" class="dyn-source">
+                    <div id="M000026_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/trac4r/tickets.rb, line 83</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get</span> <span class="ruby-identifier">id</span>
       <span class="ruby-constant">Ticket</span>.<span class="ruby-identifier">load</span> <span class="ruby-ivar">@trac</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value str">&quot;ticket.get&quot;</span>,<span class="ruby-identifier">id</span>)
@@ -473,9 +473,9 @@ fetch a ticket. Returns instance of <a href="Ticket.html">Trac::Ticket</a>
             </div>
             
             <div class="method">
-                <div class="title" id="M000018">
+                <div class="title" id="M000020">
                     
-                    <a name="M000018"></a><b>get_all</b>(options={ })
+                    <a name="M000020"></a><b>get_all</b>(options={ })
                     
                 </div>
                 
@@ -502,12 +502,12 @@ to avoid this. other options:
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000018_source')" id="l_M000018_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000020_source')" id="l_M000020_source">show</a>
                         
                         | <a href="http://github.com/davetron5000/trac4r/blob/0c428d821579be6dae39a1e33c58857398aab90f/lib/trac4r/tickets.rb#L65" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000018_source" class="dyn-source">
+                    <div id="M000020_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/trac4r/tickets.rb, line 65</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_all</span> <span class="ruby-identifier">options</span>={ }
       <span class="ruby-identifier">include_closed</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:include_closed</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword kw">true</span>
@@ -606,9 +606,9 @@ time we call it.
             </div>
             
             <div class="method">
-                <div class="title" id="M000010">
+                <div class="title" id="M000013">
                     
-                    <a name="M000010"></a><b>list</b>(options={ })
+                    <a name="M000013"></a><b>list</b>(options={ })
                     
                 </div>
                 
@@ -631,12 +631,12 @@ to only get open tickets.
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000010_source')" id="l_M000010_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000013_source')" id="l_M000013_source">show</a>
                         
                         | <a href="http://github.com/davetron5000/trac4r/blob/0c428d821579be6dae39a1e33c58857398aab90f/lib/trac4r/tickets.rb#L36" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000010_source" class="dyn-source">
+                    <div id="M000013_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/trac4r/tickets.rb, line 36</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">list</span> <span class="ruby-identifier">options</span>={ }
       <span class="ruby-identifier">include_closed</span> = <span class="ruby-keyword kw">true</span>
@@ -651,9 +651,9 @@ to only get open tickets.
             </div>
             
             <div class="method">
-                <div class="title" id="M000017">
+                <div class="title" id="M000019">
                     
-                    <a name="M000017"></a><b>list_closed</b>()
+                    <a name="M000019"></a><b>list_closed</b>()
                     
                 </div>
                 
@@ -669,12 +669,12 @@ like `list&#8217;, but only gets closed tickets
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000017_source')" id="l_M000017_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000019_source')" id="l_M000019_source">show</a>
                         
                         | <a href="http://github.com/davetron5000/trac4r/blob/0c428d821579be6dae39a1e33c58857398aab90f/lib/trac4r/tickets.rb#L54" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000017_source" class="dyn-source">
+                    <div id="M000019_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/trac4r/tickets.rb, line 54</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">list_closed</span>
       <span class="ruby-identifier">query</span>(<span class="ruby-identifier">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;closed&quot;</span>)
@@ -719,9 +719,9 @@ adds an attachment to a ticket
             </div>
             
             <div class="method">
-                <div class="title" id="M000016">
+                <div class="title" id="M000018">
                     
-                    <a name="M000016"></a><b>query</b>(args)
+                    <a name="M000018"></a><b>query</b>(args)
                     
                 </div>
                 
@@ -747,12 +747,12 @@ values mean &#8220;or&#8221;, as in any value may match
                 
                 <div class="sourcecode">
                     <p class="source-link">
-                        Source: <a href="javascript:toggleSource('M000016_source')" id="l_M000016_source">show</a>
+                        Source: <a href="javascript:toggleSource('M000018_source')" id="l_M000018_source">show</a>
                         
                         | <a href="http://github.com/davetron5000/trac4r/blob/0c428d821579be6dae39a1e33c58857398aab90f/lib/trac4r/tickets.rb#L49" target="_blank" class="github_url">on GitHub</a>
                         
                     </p>
-                    <div id="M000016_source" class="dyn-source">
+                    <div id="M000018_source" class="dyn-source">
                         <pre><span class="ruby-comment cmt"># File lib/trac4r/tickets.rb, line 49</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">query</span>(<span class="ruby-identifier">args</span>)
       <span class="ruby-ivar">@trac</span>.<span class="ruby-identifier">query</span>(<span class="ruby-value str">&quot;ticket.query&quot;</span>,<span class="ruby-identifier">args_to_trac_args</span>(<span class="ruby-identifier">args</span>))
