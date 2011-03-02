@@ -19,7 +19,7 @@
         </h1>
         <ul class="files">
             <li>README.rdoc</li>
-            <li>Last modified: Mon Feb 01 19:13:59 -0500 2010</li>
+            <li>Last modified: Wed Mar 02 08:09:30 -0500 2011</li>
         </ul>
     </div>
 
@@ -84,6 +84,31 @@ This wraps the <a href="../classes/Trac.html">Trac</a> XML-RPC plugin.
     trac.tickets.list # get all tickets
     trac.tickets.get 2334 # Get ticket #2334
 </pre>
+<p>
+Receive one single ticket
+</p>
+<pre>
+    ticket = trac.tickets.get 9
+    ticket.summary #=&gt; 'foo'
+    ticket.description #=&gt; 'bar'
+</pre>
+<p>
+Scope the ticket
+</p>
+<pre>
+    trac.tickets.list :include_closed =&gt; false
+</pre>
+<p>
+Create a new ticket
+</p>
+<pre>
+    trac.tickets.create &quot;summary&quot;, &quot;description&quot;, :type =&gt; 'defect', :version =&gt; '1.0', :milestone =&gt; 'bug free' #=&gt; 10
+</pre>
+<p>
+summary and description are required, the rest is optional. It can be one
+of the following: :severity, :milestone, :status, :type, :priority,
+:version, :reporter, :owner, :cc, :keywords
+</p>
 <h3>Tickets</h3>
 <p>
 Trac&#8217;s backbone is tickets. The Tickets class contains many useful
@@ -124,7 +149,7 @@ These options are available for any command and are specified before the
 name of the command
 </p>
 <dl>
-<dt><tt>--cols=arg</tt></dt><dd>number of columns for formatting <em>( default: <tt> 148</tt>)</em>
+<dt><tt>--cols=arg</tt></dt><dd>number of columns for formatting <em>( default: <tt> 142</tt>)</em>
 
 </dd>
 <dt><tt>--noformat</tt></dt><dd>Do not format output
@@ -170,15 +195,29 @@ parsable by other scripts
 <p>
 Shows list of commands or help for one command
 </p>
+<p>
+Gets help for the application or its commands. Can also list the commands
+in a way helpful to creating a bash-style completion function
+</p>
+<h4>Options</h4>
+<p>
+These options are specified <b>after</b> the command.
+</p>
+<dl>
+<dt><tt>-c, --completion</tt></dt><dd>List all commands one line at a time, for use with shell completion
+([command] argument is partial command to match)
+
+</dd>
+</dl>
 <h3><tt>initconfig </tt></h3>
 <p>
 Initialize the config file using current global options
 </p>
 <p>
 Initializes a configuration file where you can set default options for
-command line flags, but globally and on a per-command basis. These defaults
-override the built-in defaults and allow you to omit commonly-used command
-line flags when invoking this program
+command line flags, both globally and on a per-command basis. These
+defaults override the built-in defaults and allow you to omit commonly-used
+command line flags when invoking this program
 </p>
 <h4>Options</h4>
 <p>
@@ -194,6 +233,14 @@ These options are specified <b>after</b> the command.
 Go to the new ticket web interface
 </p>
 <p>
+<b>Aliases</b>
+</p>
+<ul>
+<li><b><tt>nt</tt></b>
+
+</li>
+</ul>
+<p>
 Navigates your browser to the web interface, initialized with the values
 you provide, but does not actually create the ticket
 </p>
@@ -203,6 +250,12 @@ These options are specified <b>after</b> the command.
 </p>
 <dl>
 <dt><tt>-c, --component=arg</tt></dt><dd>component
+
+</dd>
+<dt><tt>-k, --keywords=arg</tt></dt><dd>keywords
+
+</dd>
+<dt><tt>-m, --milestone=arg</tt></dt><dd>milestone
 
 </dd>
 <dt><tt>-p, --priority=arg</tt></dt><dd>priority
@@ -241,6 +294,10 @@ These options are specified <b>after</b> the command.
 </dd>
 <dt><tt>--columns=arg</tt></dt><dd>Columns to show
 
+<p>
+comma-delimited list of the column names from the tickets to show in the
+output
+</p>
 </dd>
 <dt><tt>-l, --description</tt></dt><dd>Show full description
 
