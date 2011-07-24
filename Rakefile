@@ -1,9 +1,11 @@
 require 'rake/clean'
-require 'rake/rdoctask'
+require 'rdoc/task'
 require 'rubygems'
-require 'rake/gempackagetask'
+require 'rubygems/package_task'
 require 'grancher'
 require 'sdoc'
+
+include Rake::DSL
 
 begin
   require 'grancher/task'
