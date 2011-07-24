@@ -6,6 +6,7 @@ module Trac
     attr_accessor(:id,          # Integer
                   :severity,    # String
                   :milestone,   # String
+                  :component,   # String
                   :status,      # String
                   :type,        # String
                   :priority,    # String
