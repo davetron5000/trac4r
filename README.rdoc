@@ -9,16 +9,11 @@ For more information on the Trac XML-RPC see the {plugin's page on trac-hacks.co
 
 Thanks to the original author, Niklas Cathor, who has done most of the work.
 
-<i>Note that I (David Copeland) will probably not be making more changes to this, as my main reason for picking this up was that I am using Trac where I work.  We are moving away from Trac, so I have less need to do anything with this library.  If someone is interested in claiming ownership, specifically owning the gem on Gemcutter, just let me know and I'll hand it over.</i>
+<i>Note that I (David Copeland) will probably not be making more changes to this, as my main reason for picking this up was that I am using Trac where I work.  We are moving away from Trac, so I have less need to do anything with this library.  If someone is interested in claiming ownership, specifically owning the gem on RubyGems, just let me know and I'll hand it over.</i>
 
 == Install
 
-    # Only if you haven't set up gemcutter yet
-    sudo gem install gemcutter
-    sudo gem tumble
-
-    # Once Gemcutter is setup
-    sudo gem install trac4r
+    gem install trac4r # use sudo if not using rvm
 
 == Overview
 
@@ -65,6 +60,10 @@ a more Rubyesque syntax:
     not_closed_nor_testing = trac.tickets.query(:status => ["!closed","test"])
 
 :include:trac.rdoc
+
+== Contributions
+
+Although I'm not actively working on this, I'm happy to merge changes or additions that people find useful and push them to RubyGems.  Just send me a pull request or email me patch.
 
 == More Info
 
